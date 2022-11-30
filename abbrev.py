@@ -1,10 +1,10 @@
 import re
+import typing
 from collections import Counter
-from typing import Pattern
 
 
-def abbrev(*words: str, pattern: Pattern | None = None):
-    seen = Counter()
+def abbrev(*words: str, pattern: typing.Pattern | None = None) -> dict[str, str]:
+    seen: typing.Counter[str] = Counter()
     abbrs: dict[str, str] = {}
 
     for word in words:
